@@ -119,7 +119,48 @@ struct WeatherInfoView: View {
 
             }
             .padding()
+            .onAppear {
+                fetchWeather(for: city.location) { result in
+                    switch result {
+                    case .success(let response):
+                        print("weather response: \(response)")
+                    case .failure(let error):
+                        print("weather fetch failed: \(error.localizedDescription)")
+                    }
+                }
+            }
         }
+    }
+    
+    func fetchWeather(for location: CLLocation, completion: @escaping (Result<WeatherResponse, Error>) -> Void) {
+        let baseURL = "https://api.openweathermap.org/data/2.5/forecast"
+        let apiKey = "14379450f55fe65f99b0236875893d09"
+        
+        let url = "\(baseURL)?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=\(apiKey)"
+        
+        guard let requestURL = URL(string: url) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 400, userInfo: nil)))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data", code: 500, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let weatherData = try JSONDecoder().decode(WeatherResponse.self, from: data)
+                completion(.success(weatherData))
+            } catch let decodeError {
+                completion(.failure(decodeError))
+            }
+        }.resume()
     }
     
     private func weeklyForecast(_ forecast: WeeklyForecast) -> some View {

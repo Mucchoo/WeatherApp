@@ -12,6 +12,7 @@
 		C60AF5802AC8CAD900EE52B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */; };
 		C6CE0C642AC9197400346152 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C632AC9197400346152 /* WeatherInfoView.swift */; };
 		C6CE0C662AC92D1300346152 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C652AC92D1300346152 /* LocationManager.swift */; };
+		C6CE0C6C2AC944F200346152 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C6B2AC944F200346152 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C6CE0C632AC9197400346152 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
 		C6CE0C652AC92D1300346152 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C6CE0C672AC92E9F00346152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6CE0C6B2AC944F200346152 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */,
 				C6CE0C652AC92D1300346152 /* LocationManager.swift */,
 				C6CE0C632AC9197400346152 /* WeatherInfoView.swift */,
+				C6CE0C6B2AC944F200346152 /* WeatherResponse.swift */,
 				C6CE0C672AC92E9F00346152 /* Info.plist */,
 				C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */,
 			);
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6CE0C662AC92D1300346152 /* LocationManager.swift in Sources */,
+				C6CE0C6C2AC944F200346152 /* WeatherResponse.swift in Sources */,
 				C60AF57E2AC8CAD800EE52B1 /* ContentView.swift in Sources */,
 				C60AF57C2AC8CAD800EE52B1 /* WeatherAppApp.swift in Sources */,
 				C6CE0C642AC9197400346152 /* WeatherInfoView.swift in Sources */,
