@@ -25,7 +25,6 @@ struct WeatherInfoView: View {
     ]
     
     var body: some View {
-        
         ZStack {
             GeometryReader { geometry in
                 Image("cloudy")
@@ -43,10 +42,11 @@ struct WeatherInfoView: View {
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
                     
-                    Text("  98°")
+                    Text("98°")
                         .font(.system(size: 45))
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
+                        .padding(.leading)
                     
                     Text("Cloudy")
                         .foregroundStyle(.white)
@@ -73,6 +73,7 @@ struct WeatherInfoView: View {
                                 ForecastView(time: "3 PM", celcius: 90, image: "cloud.sun")
                                 ForecastView(time: "4 PM", celcius: 90, image: "sun.haze")
                             }
+                            .padding(.vertical, 10)
                         }
                     }
 
@@ -89,15 +90,14 @@ struct WeatherInfoView: View {
                                 weeklyForecast(forecast)
                             }
                         }
+                        .padding(.bottom)
                     }
 
                 }
 
             }
-            .padding(.top, 25)
             .padding([.horizontal, .bottom])
         }
-        
     }
     
     private func weeklyForecast(_ forecast: WeeklyForecast) -> some View {
@@ -195,7 +195,7 @@ struct CustomStackView<Title: View, Content: View>: View {
                 Divider()
                 
                 contentView
-                    .padding()
+                    .padding(.horizontal)
             }
             .background(.ultraThinMaterial, in: CustomCorner(corners: [.bottomLeft, .bottomRight], radius: 12))
         }
