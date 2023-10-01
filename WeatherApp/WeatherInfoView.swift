@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct WeeklyForecast: Hashable {
     let day: String
@@ -14,6 +15,7 @@ struct WeeklyForecast: Hashable {
 }
 
 struct WeatherInfoView: View {
+    let city: City
     let weeklyForecasts: [WeeklyForecast] = [
         .init(day: "Mon", celcius: 90, image: "sun.min"),
         .init(day: "Tue", celcius: 91, image: "cloud.sun"),
@@ -37,7 +39,7 @@ struct WeatherInfoView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack {
-                    Text("San Jose")
+                    Text(city.name)
                         .font(.system(size: 35))
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
@@ -218,5 +220,5 @@ struct CustomCorner: Shape {
 }
 
 #Preview {
-    WeatherInfoView()
+    WeatherInfoView(city: .init(name: "Test", location: .init(latitude: 0, longitude: 0)))
 }

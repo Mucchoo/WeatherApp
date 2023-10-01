@@ -6,18 +6,31 @@
 //
 
 import SwiftUI
+import CoreLocation
+
+struct City: Hashable {
+    let name: String
+    let location: CLLocation
+}
 
 struct ContentView: View {
     @ObservedObject var locationManager = LocationManager()
     @State private var showingSheet = false
+    @State private var selectedCity: City?
     
-    private let cities = ["東京", "大分", "京都", "北海道"]
+    private let cities: [City] = [
+        .init(name: "東京", location: .init(latitude: 35.6762, longitude: 139.6503)),
+        .init(name: "大分", location: .init(latitude: 33.2396, longitude: 131.6095)),
+        .init(name: "京都", location: .init(latitude: 35.0116, longitude: 135.7681)),
+        .init(name: "北海道", location: .init(latitude: 43.2203, longitude: 142.8635))
+    ]
 
     var body: some View {
         NavigationStack {
             List {
-                if let cityName = locationManager.cityName {
-                    cityButton(city: "現在地: \(cityName)")
+                if let cityName = locationManager.cityName,
+                   let cityLocation = locationManager.location {
+                    cityButton(city: .init(name: cityName, location: cityLocation))
                 }
                 
                 ForEach(cities, id: \.self) { city in
@@ -25,17 +38,20 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("都市")
-            .fullScreenCover(isPresented: $showingSheet, content: {
-                WeatherInfoView()
-            })
+            .fullScreenCover(isPresented: $showingSheet) {
+                if let selectedCity {
+                    WeatherInfoView(city: selectedCity)
+                }
+            }
         }
     }
     
-    func cityButton(city: String) -> some View {
+    func cityButton(city: City) -> some View {
         return Button(action: {
+            selectedCity = city
             showingSheet = true
         }, label: {
-            Text(city)
+            Text(city.name)
                 .font(.title3.bold())
                 .foregroundStyle(.primary)
                 .padding(.vertical)
