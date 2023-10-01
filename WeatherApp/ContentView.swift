@@ -40,7 +40,7 @@ struct ContentView: View {
             .navigationTitle("都市")
             .fullScreenCover(isPresented: $showingSheet) {
                 if let selectedCity {
-                    WeatherInfoView(city: selectedCity)
+                    WeatherInfoView(showingSheet: $showingSheet, city: selectedCity)
                 }
             }
         }

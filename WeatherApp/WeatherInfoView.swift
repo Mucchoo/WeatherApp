@@ -15,6 +15,7 @@ struct WeeklyForecast: Hashable {
 }
 
 struct WeatherInfoView: View {
+    @Binding var showingSheet: Bool
     let city: City
     let weeklyForecasts: [WeeklyForecast] = [
         .init(day: "Mon", celcius: 90, image: "sun.min"),
@@ -58,6 +59,25 @@ struct WeatherInfoView: View {
                         .foregroundStyle(.white)
                         .shadow(radius: 5)
                 }
+                .padding(.bottom, 20)
+                .frame(maxWidth: .infinity)
+                .overlay(
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Button(action: {
+                                showingSheet = false
+                            }, label: {
+                                Image(systemName: "multiply")
+                                    .resizable()
+                                    .foregroundStyle(.white)
+                                    .frame(width: 25, height: 25)
+                                    .shadow(radius: 5)
+                            })
+                            Spacer()
+                        }
+                    }
+                )
                 
                 VStack(spacing: 8) {
                     CustomStackView {
@@ -220,5 +240,6 @@ struct CustomCorner: Shape {
 }
 
 #Preview {
-    WeatherInfoView(city: .init(name: "Test", location: .init(latitude: 0, longitude: 0)))
+    WeatherInfoView(showingSheet: .constant(true),
+                    city: .init(name: "Test", location: .init(latitude: 0, longitude: 0)))
 }
