@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let cities = ["東京", "大分", "京都", "北海道"]
+    let cities = ["現在地", "東京", "大分", "京都", "北海道"]
     
     var body: some View {
         NavigationStack {

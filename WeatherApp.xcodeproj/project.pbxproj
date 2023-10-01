@@ -10,7 +10,6 @@
 		C60AF57C2AC8CAD800EE52B1 /* WeatherAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AF57B2AC8CAD800EE52B1 /* WeatherAppApp.swift */; };
 		C60AF57E2AC8CAD800EE52B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */; };
 		C60AF5802AC8CAD900EE52B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */; };
-		C60AF5832AC8CAD900EE52B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60AF5822AC8CAD900EE52B1 /* Preview Assets.xcassets */; };
 		C6CE0C642AC9197400346152 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C632AC9197400346152 /* WeatherInfoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,7 +18,6 @@
 		C60AF57B2AC8CAD800EE52B1 /* WeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppApp.swift; sourceTree = "<group>"; };
 		C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C60AF5822AC8CAD900EE52B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6CE0C632AC9197400346152 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,17 +55,8 @@
 				C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */,
 				C6CE0C632AC9197400346152 /* WeatherInfoView.swift */,
 				C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */,
-				C60AF5812AC8CAD900EE52B1 /* Preview Content */,
 			);
 			path = WeatherApp;
-			sourceTree = "<group>";
-		};
-		C60AF5812AC8CAD900EE52B1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				C60AF5822AC8CAD900EE52B1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +117,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60AF5832AC8CAD900EE52B1 /* Preview Assets.xcassets in Resources */,
 				C60AF5802AC8CAD900EE52B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
