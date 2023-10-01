@@ -41,7 +41,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     private func fetchCityName(from location: CLLocation?) {
-        print("fetch city name: \(location)")
+        print("fetch city name: \(String(describing: location))")
         guard let location = location else { return }
         
         let geocoder = CLGeocoder()
@@ -53,7 +53,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             
             if let city = placemarks?.first?.locality {
                 print("City Name: \(city)")
-                self?.cityName = city
+                DispatchQueue.main.async {
+                    self?.cityName = city
+                }
             }
         }
     }
