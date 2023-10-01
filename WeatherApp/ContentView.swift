@@ -9,35 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var locationManager = LocationManager()
-    let cities = ["現在地", "東京", "大分", "京都", "北海道"]
+    @State private var showingSheet = false
     
+    private let cities = ["東京", "大分", "京都", "北海道"]
+
     var body: some View {
         NavigationStack {
             List {
+                if let cityName = locationManager.cityName {
+                    cityButton(city: "現在地: \(cityName)")
+                }
+                
                 ForEach(cities, id: \.self) { city in
-                    NavigationLink(destination: WeatherInfoView()) {
-                        cityText(city: city)
-                    }
+                    cityButton(city: city)
                 }
             }
-            .navigationTitle("Cities")
+            .navigationTitle("都市")
+            .fullScreenCover(isPresented: $showingSheet, content: {
+                WeatherInfoView()
+            })
         }
     }
     
-    func cityText(city: String) -> some View {
-        let text: String
-        
-        if city == cities.first, let cityName = locationManager.cityName {
-            text = "現在地: \(cityName)"
-        } else {
-            text = city
-        }
-        
-        return Text(text)
-            .font(.title)
-            .bold()
-            .foregroundStyle(.primary)
-            .padding(.vertical)
+    func cityButton(city: String) -> some View {
+        return Button(action: {
+            showingSheet = true
+        }, label: {
+            Text(city)
+                .font(.title3.bold())
+                .foregroundStyle(.primary)
+                .padding(.vertical)
+        })
     }
 }
 

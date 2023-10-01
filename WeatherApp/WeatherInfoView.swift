@@ -96,7 +96,7 @@ struct WeatherInfoView: View {
                 }
 
             }
-            .padding([.horizontal, .bottom])
+            .padding()
         }
     }
     
