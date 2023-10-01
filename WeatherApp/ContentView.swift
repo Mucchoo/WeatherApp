@@ -11,14 +11,16 @@ struct ContentView: View {
     let cities = ["東京", "大分", "京都", "北海道"]
     
     var body: some View {
-        List {
-            ForEach(cities, id: \.self) { city in
-                NavigationLink(value: "") {
-                    Text(city)
-                        .font(.title)
-                        .bold()
-                        .foregroundStyle(.primary)
-                    
+        NavigationStack {
+            List {
+                ForEach(cities, id: \.self) { city in
+                    NavigationLink(destination: WeatherInfoView()) {
+                        Text(city)
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.primary)
+                        
+                    }
                 }
             }
         }
