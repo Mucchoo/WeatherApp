@@ -11,6 +11,7 @@
 		C60AF57E2AC8CAD800EE52B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */; };
 		C60AF5802AC8CAD900EE52B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */; };
 		C6CE0C642AC9197400346152 /* WeatherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C632AC9197400346152 /* WeatherInfoView.swift */; };
+		C6CE0C662AC92D1300346152 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE0C652AC92D1300346152 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6CE0C632AC9197400346152 /* WeatherInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoView.swift; sourceTree = "<group>"; };
+		C6CE0C652AC92D1300346152 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C6CE0C672AC92E9F00346152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +56,9 @@
 			children = (
 				C60AF57B2AC8CAD800EE52B1 /* WeatherAppApp.swift */,
 				C60AF57D2AC8CAD800EE52B1 /* ContentView.swift */,
+				C6CE0C652AC92D1300346152 /* LocationManager.swift */,
 				C6CE0C632AC9197400346152 /* WeatherInfoView.swift */,
+				C6CE0C672AC92E9F00346152 /* Info.plist */,
 				C60AF57F2AC8CAD900EE52B1 /* Assets.xcassets */,
 			);
 			path = WeatherApp;
@@ -128,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CE0C662AC92D1300346152 /* LocationManager.swift in Sources */,
 				C60AF57E2AC8CAD800EE52B1 /* ContentView.swift in Sources */,
 				C60AF57C2AC8CAD800EE52B1 /* WeatherAppApp.swift in Sources */,
 				C6CE0C642AC9197400346152 /* WeatherInfoView.swift in Sources */,
@@ -263,10 +269,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,10 +299,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 4WXTDSDQPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

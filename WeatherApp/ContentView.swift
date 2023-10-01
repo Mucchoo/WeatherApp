@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var locationManager = LocationManager()
     let cities = ["現在地", "東京", "大分", "京都", "北海道"]
     
     var body: some View {
@@ -15,15 +16,28 @@ struct ContentView: View {
             List {
                 ForEach(cities, id: \.self) { city in
                     NavigationLink(destination: WeatherInfoView()) {
-                        Text(city)
-                            .font(.title)
-                            .bold()
-                            .foregroundStyle(.primary)
-                        
+                        cityText(city: city)
                     }
                 }
             }
+            .navigationTitle("Cities")
         }
+    }
+    
+    func cityText(city: String) -> some View {
+        let text: String
+        
+        if city == cities.first, let cityName = locationManager.cityName {
+            text = "現在地: \(cityName)"
+        } else {
+            text = city
+        }
+        
+        return Text(text)
+            .font(.title)
+            .bold()
+            .foregroundStyle(.primary)
+            .padding(.vertical)
     }
 }
 
